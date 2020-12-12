@@ -1,1 +1,13 @@
-show.html.erb
+
+
+<h2>Recette :</h2>
+
+<% @cocktail.doses.each do |dose| %>
+  <p><%= dose.description %>
+  <%= dose.ingredient.name %></p>
+  <%= link_to "destroy", cocktail_dose_path(@cocktail, dose), method: :delete %>
+
+
+<% end %>
+
+<%= render 'doses/new', cocktail: @cocktail, dose:@dose %>

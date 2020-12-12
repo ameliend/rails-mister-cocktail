@@ -16,10 +16,12 @@ class CocktailsController < ApplicationController
 
   #read
   def index
-    @cocktail = Cocktail.all
+    @cocktails = Cocktail.all
   end
 
   def show
+        @dose = Dose.new
+
   end
 
   #update
