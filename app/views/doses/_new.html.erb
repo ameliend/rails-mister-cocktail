@@ -1,5 +1,7 @@
+<h3 class="mb-4">Add ingredients</h3>
+
 <%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.input :description %>
+  <%= f.input :description, placeholder: 'example : 6 oz' %>
   <%= f.association :ingredient %>
-  <%= f.submit %>
+  <%= f.submit 'Add', class:"btn btn-outline-dark" %>
 <% end %>

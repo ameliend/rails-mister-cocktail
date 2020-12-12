@@ -1,13 +1,38 @@
 
-
-<h2>Recette :</h2>
-
-<% @cocktail.doses.each do |dose| %>
-  <p><%= dose.description %>
-  <%= dose.ingredient.name %></p>
-  <%= link_to "destroy", cocktail_dose_path(@cocktail, dose), method: :delete %>
+<!-- <div class="orange-background"> -->
 
 
-<% end %>
+<div class="margin-top-navbar">
+  <div class="show-banner" style="background-image: url('<%= @cocktail.cocktail_url %>')"> </div>
 
-<%= render 'doses/new', cocktail: @cocktail, dose:@dose %>
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-7">
+      <div>
+        <h2> <%= @cocktail.name %> </h2>
+      </div>
+
+      <div>
+        <ul>
+          <% @cocktail.doses.each do |dose| %>
+            <li> <%= dose.description %>
+            <%= dose.ingredient.name %>
+            <%= link_to cocktail_dose_path(@cocktail, dose), method: :delete  do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
+            </li>
+            <% end %>
+
+        </ul>
+      </div>
+
+      </div>
+
+      <div class="col-4">
+        <%= render 'doses/new', cocktail: @cocktail, dose:@dose %>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -1,11 +1,24 @@
-<h2>Liste des cocktails</h2>
 
-<ul>
-  <% @cocktails.each do |cocktail| %>
-    <%=link_to cocktail_path(cocktail) do %>
-      <li> <%= cocktail.name %>  </li>
-    <% end %>
-  <% end %>
-</ul>
+<div class="blue-background">
+</div>
+
+<div class="container ">
+    <h2 class="text-center mt-5">Liste des cocktails</h2>
+    <div class="row mt-5">
+      <% @cocktails.each do |cocktail| %>
+        <div class="col-4">
+          <%=link_to cocktail_path(cocktail) do %>
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail.cocktail_url %>)">
+            <%= cocktail.name %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+</div>
+
+
+
+
 
 

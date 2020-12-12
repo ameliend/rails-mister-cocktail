@@ -11,3 +11,16 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body{
+  background-color: #deb188ff ;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+
+.margin-top-navbar{
+margin-top: 60px;
+}

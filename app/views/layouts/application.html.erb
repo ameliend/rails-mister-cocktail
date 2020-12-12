@@ -13,10 +13,34 @@
   </head>
 
   <body>
-    <div class="home_background">
-
+    <div class="navbar fixed-top">
+      <div>
+        <%= link_to cocktails_path do %>
+        <%= image_tag "logo.png", alt: "", width: 60 %>
+        <% end %>
+      </div>
+      <div>
+        <form>
+            <div class="form-group d-flex ">
+              <input type="search" class="form-control" name="query" id="search" placeholder="search">
+              <button type="submit" class="btn btn-primary mb-2">Search</button>
+            </div>
+          </form>
+      </div>
     </div>
 
+
+      <%= link_to new_cocktail_path do %>
+        <div class="plus-btn fixed-bottom fixed-right">
+          <i class="fas fa-plus"></i>
+        </div>
+      <% end %>
+
+
     <%= yield %>
+
   </body>
 </html>
+
+
+

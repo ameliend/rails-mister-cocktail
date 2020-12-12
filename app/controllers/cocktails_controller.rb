@@ -16,12 +16,15 @@ class CocktailsController < ApplicationController
 
   #read
   def index
-    @cocktails = Cocktail.all
+    if params[:query].present?
+      @cocktails = Cocktail.where('name LIKE ?', "%#{params[:query]}%")
+    else
+      @cocktails = Cocktail.all
+    end
   end
 
   def show
-        @dose = Dose.new
-
+    @dose = Dose.new
   end
 
   #update
@@ -45,7 +48,7 @@ private
   end
 
   def cocktail_params
-    params.require(:cocktail).permit(:name, :cocktail_url)
+    params.require(:cocktail).permit(:name, :cocktail_url, :query)
   end
 
 end

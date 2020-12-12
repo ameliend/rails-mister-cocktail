@@ -1,5 +1,8 @@
-<%= simple_form_for(@cocktail) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :cocktail_url %>
-  <%= f.submit %>
+<div class="mt-5">
+  <%= simple_form_for(@cocktail) do |f| %>
+  <%= f.input :name, label: "Name :" %>
+  <%= f.input :cocktail_url, label: "Photo(url) :" %>
+  <%= f.submit 'Add', class:"btn btn-dark btn-block mt-5" %>
 <% end %>
+</div>
+
