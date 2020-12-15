@@ -48,7 +48,7 @@ private
   end
 
   def cocktail_params
-    params.require(:cocktail).permit(:name, :cocktail_url, :query)
+    params.require(:cocktail).permit(:name, :cocktail_url, :query, :photo)
   end
 
 end

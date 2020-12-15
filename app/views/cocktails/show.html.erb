@@ -4,7 +4,7 @@
 
 
 
-  <div class="show-banner d-flex justify-content-end mt-4" style="background-image: url('<%= @cocktail.cocktail_url %>')">
+  <div class="show-banner d-flex justify-content-end mt-4" style="background-image: url('<%= cl_image_path @cocktail.photo.key %>')">
   </div>
 
   <div class="container">
@@ -36,6 +36,7 @@
       </div>
     </div>
   </div>
+
 
 
 

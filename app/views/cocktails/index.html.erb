@@ -9,7 +9,7 @@
       <% @cocktails.each do |cocktail| %>
         <div class="col-10 col-lg-4">
           <%=link_to cocktail_path(cocktail) do %>
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail.cocktail_url %>)">
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key %>')">
               <%= cocktail.name %>
               <div class="delete-btn">
                 <%= link_to cocktail_path(cocktail), method: :delete, data: {confirm: "Are you sure?"} do %>
@@ -22,4 +22,3 @@
       <% end %>
     </div>
 </div>
-
