@@ -1,6 +1,6 @@
 
 .blue-background {
-background-image: image-url("home-background.png");
+background-image: asset-url("home-background.png");
 height: 100vh;
 background-size: cover;
 }
@@ -12,7 +12,7 @@ background-size: cover;
 }
 
 .create-background {
-background-image: url("create-background.png");
+background-image: asset-url("create-background.png");
 height: 100vh;
 background-size: cover;
 }
@@ -21,7 +21,7 @@ background-size: cover;
 @media (max-width: 940px) {
   /* For a screen < 540px, this CSS will be read */
 .create-background {
-background-image: url("");
+background-image: asset-url("");
 background-color: #deb188ff;
 height: 100vh;
 background-size: cover;
