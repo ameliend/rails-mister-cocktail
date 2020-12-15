@@ -16,3 +16,14 @@ background-image: url("create-background.png");
 height: 100vh;
 background-size: cover;
 }
+
+
+@media (max-width: 940px) {
+  /* For a screen < 540px, this CSS will be read */
+.create-background {
+background-image: url("");
+background-color: #deb188ff;
+height: 100vh;
+background-size: cover;
+}
+}

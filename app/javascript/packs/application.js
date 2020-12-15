@@ -16,3 +16,20 @@ import 'bootstrap';
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+
+import { initSweetalert } from '../plugins/init_sweetalert';
+
+initSweetalert('#sweet-alert-demo', {
+  title: "Are you sure?",
+  text: "Are you sure you want to delete this cocktail ?",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#delete-link');
+    link.click();
+  }
+});
+

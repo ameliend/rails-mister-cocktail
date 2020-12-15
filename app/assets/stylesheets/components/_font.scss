@@ -1,8 +1,51 @@
+h1{
+color: #deb188ff;
+    position: absolute;
+    top: 361px;
+    left: 735px;
+    font-weight: lighter;
+    font-size: 77px;
+    font-family: 'Roboto', sans-serif;
+}
+
 
 h2{
   color: #130F2E;
+      font-family: 'Roboto', sans-serif;
+
 }
 
 i{
   color: #130F2E;
 }
+
+
+@media (max-width: 1140px) {
+  /* For a screen < 540px, this CSS will be read */
+  h1 {
+  position: absolute;
+  top: 400px;
+  left: 300px;
+  font-weight: lighter;
+  font-size: 50px;
+
+  }
+}
+
+
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  h1 {
+    width: 300px;
+    margin: auto;
+    position: absolute;
+    top: 121px;
+    left: 5px;
+    text-align: center;
+    font-size: 49px;
+
+
+  }
+}
+
+

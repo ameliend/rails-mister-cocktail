@@ -1,24 +1,25 @@
 
-<div class="blue-background">
+<div class="blue-background d-flex align-items-center justify-content-center">
+  <h1>Your cocktail club</h1>
 </div>
 
-<div class="container ">
+<div class="container">
     <h2 class="text-center mt-5">Liste des cocktails</h2>
-    <div class="row mt-5">
+    <div class="row justify-content-center mt-5 mb-5">
       <% @cocktails.each do |cocktail| %>
-        <div class="col-4">
+        <div class="col-10 col-lg-4">
           <%=link_to cocktail_path(cocktail) do %>
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail.cocktail_url %>)">
-            <%= cocktail.name %>
+              <%= cocktail.name %>
+              <div class="delete-btn">
+                <%= link_to cocktail_path(cocktail), method: :delete, data: {confirm: "Are you sure?"} do %>
+                <i class="fas fa-times"></i>
+                <% end %>
+                </div>
             </div>
           <% end %>
         </div>
       <% end %>
     </div>
 </div>
-
-
-
-
-
 
