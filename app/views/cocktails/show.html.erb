@@ -1,10 +1,11 @@
-
-<!-- <div class="orange-background"> -->
-
-
-
+<div class="orange-background">
 
   <div class="show-banner d-flex justify-content-end mt-4" style="background-image: url('<%= cl_image_path @cocktail.photo.key %>')">
+    <div class="margin-banner">
+      <button id="sweet-alert-demo" class="btn btn-danger rounded-circle"><i class="far fa-trash-alt"></i></button>
+      <%= link_to "", cocktail_path(@cocktail), method: :delete, id: "delete-link", class: "hidden" %>
+    </div>
+
   </div>
 
   <div class="container">
@@ -35,9 +36,7 @@
         <%= render 'doses/new', cocktail: @cocktail, dose:@dose %>
       </div>
     </div>
+
   </div>
-
-
-
 
 
