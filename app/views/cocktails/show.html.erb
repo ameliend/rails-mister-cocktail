@@ -1,7 +1,7 @@
 <div class="orange-background">
 
   <div class="show-banner">
-    <div class="margin-banner">
+    <div class="margin-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key %>')" >
       <button id="sweet-alert-demo" class="btn btn-danger rounded-circle"><i class="far fa-trash-alt"></i></button>
       <%= link_to "", cocktail_path(@cocktail), method: :delete, id: "delete-link", class: "hidden" %>
     </div>
