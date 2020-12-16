@@ -1,6 +1,12 @@
 <div class="orange-background">
 
+  <div class="show-banner">
+    <div class="margin-banner">
+      <button id="sweet-alert-demo" class="btn btn-danger rounded-circle"><i class="far fa-trash-alt"></i></button>
+      <%= link_to "", cocktail_path(@cocktail), method: :delete, id: "delete-link", class: "hidden" %>
+    </div>
 
+  </div>
 
   <div class="container">
     <div class="row mt-5">
