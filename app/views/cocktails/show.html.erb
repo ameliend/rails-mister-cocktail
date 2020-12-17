@@ -1,41 +1,51 @@
-<div class="orange-background">
+<div class="white-background">
 
-  <div class="show-banner d-flex justify-content-end mt-4" style="background-image: url('<%= cl_image_path @cocktail.photo.key %>')">
-    <div class="margin-banner">
+  <div class="show-banner margin-banner" style=" background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @cocktail.photo.key %>')">
+    <div class="show-header">
+      <h2> <%= @cocktail.name %> </h2>
+    </div>
+
         <button id="sweet-alert-demo" class="btn btn-danger rounded-circle"><i class="far fa-trash-alt"></i></button>
         <%= link_to "", cocktail_path(@cocktail), method: :delete, id: "delete-link", class: "hidden" %>
-    </div>
+
   </div>
 
   <div class="container">
-    <div class="row mt-5">
-      <div class="col-7 ">
-      <div class="mb-5">
-        <h2> <%= @cocktail.name %> </h2>
-      </div>
-
-      <div>
-        <ul>
-          <% @cocktail.doses.each do |dose| %>
-            <li> <%= dose.description %>
-            <%= dose.ingredient.name %>
-
-            <%= link_to cocktail_dose_path(@cocktail, dose), method: :delete  do %>
-              <i class="far fa-trash-alt"></i>
+    <div class="row mt-5 justify-content-center">
+      <div class="col-4 content-show-card">
+          <h3 class="mb-5">Doses</h3>
+          <ul>
+            <% @cocktail.doses.each do |dose| %>
+              <li> <%= dose.description %>
+                <%= dose.ingredient.name %>
+                <%= link_to cocktail_dose_path(@cocktail, dose), method: :delete  do %>
+                  <i class="far fa-trash-alt"></i>
+                <% end %>
+              </li>
             <% end %>
-            </li>
-            <% end %>
-
-        </ul>
+          </ul>
       </div>
+    </div>
 
-      </div>
-
-      <div class="col-4">
+    <div class="row mt-5 justify-content-center">
+      <div class="col-4 content-show-card">
         <%= render 'doses/new', cocktail: @cocktail, dose:@dose %>
       </div>
     </div>
 
+    <div class="row mt-5 review-card">
+      <div class="col-12">
+        <h2> Reviews </h2>
+        <ul>
+          <% @cocktail.reviews.each do |review| %>
+            <li class="list-group-item"><%= review.description %></li>
+          <% end %>
+        </ul>
+        <div>
+          <%= render 'reviews/new', cocktail: @cocktail, review:@review %>
+        </div>
+      </div>
+    </div>
   </div>
-
+</div>
 

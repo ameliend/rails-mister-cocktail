@@ -1,0 +1,18 @@
+<h3 class="mt-5">Add a Review</h3>
+
+  <%= simple_form_for [ @cocktail, @review ] do |f| %>
+   <div class="form-row d-flex align-items-center">
+     <div class="col-7">
+        <%= f.input :description, label: "Description :" %>
+      </div>
+      <div class="col-2">
+        <%= f.input :rating %>
+      </div>
+       <div class="col-3 mt-2">
+        <%= f.submit 'Add', class:"btn btn-dark btn-block" %>
+      </div>
+    </div>
+  <% end %>
+
+
+
