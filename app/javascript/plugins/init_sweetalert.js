@@ -5,9 +5,9 @@ const initSweetalert = (selector, options = {}, callback = () => {}) => {
   if (swalButtons) { // protect other pages
     swalButtons.forEach((swalButton) => {
       swalButton.addEventListener('click', (e) => {
-        swal(options).then(() => {
+        swal(options).then((value) => {
           console.log("test", e)
-          callback(e.target)
+          callback(value, e.target)
         }); // <-- add the `.then(callback)`
       });
     })

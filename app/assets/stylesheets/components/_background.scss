@@ -16,12 +16,25 @@ background-size: cover;
 display: flex;
 justify-content: center;
 align-items: center;
-text-align: center;
+position: relative;
+
 }
 
 .show-banner h2{
-  color: white;
+color: white;
+font-size: 58px;
 }
+
+
+.show-banner button {
+position: absolute;
+top: 11px;
+right: 11px;
+background-color: white;
+border: none;
+
+}
+
 
 .margin-banner{
   margin-top: 66px;

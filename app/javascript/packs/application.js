@@ -30,10 +30,9 @@ initSweetalert('#sweet-alert-demo', {
   icon: "warning",
   buttons: true,
   dangerMode: true,
-}, (value) => {
+}, (value, target) => {
   if (value) {
-    console.log(value)
-    const link = value.parentNode.parentNode.querySelector('.delete-link');
+    const link = target.parentNode.parentNode.querySelector('.delete-link');
     link.click();
   }
 });

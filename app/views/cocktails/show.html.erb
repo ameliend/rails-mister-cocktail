@@ -4,10 +4,8 @@
     <div class="show-header">
       <h2> <%= @cocktail.name %> </h2>
     </div>
-
-        <button id="sweet-alert-demo" class="btn btn-danger rounded-circle"><i class="far fa-trash-alt"></i></button>
-        <%= link_to "", cocktail_path(@cocktail), method: :delete, class: "delete-link hidden" %>
-
+      <button id="sweet-alert-demo" class="btn rounded-circle"><i class="far fa-trash-alt"></i></button>
+      <%= link_to "", cocktail_path(@cocktail), method: :delete, class: "delete-link hidden" %>
   </div>
 
   <div class="container">
