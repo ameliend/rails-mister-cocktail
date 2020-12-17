@@ -20,6 +20,10 @@ import 'bootstrap';
 
 import { initSweetalert } from '../plugins/init_sweetalert';
 
+
+
+document.addEventListener('turbolinks:load', () => {
+
 initSweetalert('#sweet-alert-demo', {
   title: "Are you sure?",
   text: "Are you sure you want to delete this cocktail ?",
@@ -28,8 +32,10 @@ initSweetalert('#sweet-alert-demo', {
   dangerMode: true,
 }, (value) => {
   if (value) {
-    const link = document.querySelector('#delete-link');
+    console.log(value)
+    const link = value.parentNode.parentNode.querySelector('.delete-link');
     link.click();
   }
 });
 
+})
